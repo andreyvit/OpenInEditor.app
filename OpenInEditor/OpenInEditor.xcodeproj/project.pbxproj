@@ -17,6 +17,7 @@
 		4344CE68179C621C00CB8658 /* TaskOutputReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4344CE67179C621C00CB8658 /* TaskOutputReader.m */; };
 		4344CE6B179C622E00CB8658 /* PlainUnixTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 4344CE6A179C622E00CB8658 /* PlainUnixTask.m */; };
 		4344CE71179C62A600CB8658 /* OpenInEditorRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4344CE70179C62A600CB8658 /* OpenInEditorRequest.m */; };
+		4344CE74179C7FC400CB8658 /* NSAppleScript+InvokeHandlerWithArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 4344CE73179C7FC400CB8658 /* NSAppleScript+InvokeHandlerWithArguments.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		4344CE6A179C622E00CB8658 /* PlainUnixTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainUnixTask.m; sourceTree = "<group>"; };
 		4344CE6F179C62A600CB8658 /* OpenInEditorRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenInEditorRequest.h; sourceTree = "<group>"; };
 		4344CE70179C62A600CB8658 /* OpenInEditorRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenInEditorRequest.m; sourceTree = "<group>"; };
+		4344CE72179C7FC400CB8658 /* NSAppleScript+InvokeHandlerWithArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAppleScript+InvokeHandlerWithArguments.h"; sourceTree = "<group>"; };
+		4344CE73179C7FC400CB8658 /* NSAppleScript+InvokeHandlerWithArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAppleScript+InvokeHandlerWithArguments.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				4344CE67179C621C00CB8658 /* TaskOutputReader.m */,
 				4344CE69179C622E00CB8658 /* PlainUnixTask.h */,
 				4344CE6A179C622E00CB8658 /* PlainUnixTask.m */,
+				4344CE72179C7FC400CB8658 /* NSAppleScript+InvokeHandlerWithArguments.h */,
+				4344CE73179C7FC400CB8658 /* NSAppleScript+InvokeHandlerWithArguments.m */,
 				4344CE5B179C450A00CB8658 /* MainMenu.xib */,
 				4344CE4D179C450A00CB8658 /* Supporting Files */,
 			);
@@ -193,6 +198,7 @@
 				4344CE68179C621C00CB8658 /* TaskOutputReader.m in Sources */,
 				4344CE6B179C622E00CB8658 /* PlainUnixTask.m in Sources */,
 				4344CE71179C62A600CB8658 /* OpenInEditorRequest.m in Sources */,
+				4344CE74179C7FC400CB8658 /* NSAppleScript+InvokeHandlerWithArguments.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

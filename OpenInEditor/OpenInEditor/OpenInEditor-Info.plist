@@ -64,6 +64,16 @@
 				<string>subl3</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.tarantsov.openineditor.coda.2</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>coda2</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

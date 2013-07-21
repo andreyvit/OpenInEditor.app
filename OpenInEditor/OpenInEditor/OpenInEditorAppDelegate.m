@@ -3,6 +3,7 @@
 #import "OpenInEditorRequest.h"
 #import "PlainUnixTask.h"
 #import "NSString+ProperURLEncoding.h"
+#import "NSAppleScript+InvokeHandlerWithArguments.h"
 
 #define bailout(message, ...)  do { \
         NSLog(message, ## __VA_ARGS__); \
@@ -22,6 +23,7 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    // [self openURLString:@"coda2://open/?url=file:///Users/andreyvit/dev/livereload/support/examples/naive_example/test.less&line=6&column=2"];
 }
 
 - (void)handleURLEvent:(NSAppleEventDescriptor*)event withReplyEvent:(NSAppleEventDescriptor*)replyEvent {
@@ -29,6 +31,10 @@
     if (!urlString)
         bailout(@"OpenInEditor: URL string is empty");
 
+    [self openURLString:urlString];
+}
+
+ - (void)openURLString:(NSString *)urlString {
     NSURL *url = [NSURL URLWithString:urlString];
     if (!url)
         bailout(@"OpenInEditor: failed to parse URL string '%@'", urlString);
@@ -86,6 +92,8 @@
         return [self openInSublimeText3:request];
     else if ([scheme isEqualToString:@"subl"])
         return [self openInSublimeText2:request] || [self openInSublimeText3:request];
+    else if ([scheme isEqualToString:@"coda2"])
+        return [self openInCoda2:request];
     else
         bailout_return(NO, @"OpenInEditor: unknown URL scheme '%@'", scheme);
 }
@@ -137,6 +145,37 @@
             }
         }
     });
+    return YES;
+}
+
+static NSString *CodaJumpScript =
+    @"on jump(charOffset)\n"
+    @"  tell application \"Coda 2\"\n"
+    @"    set selected range of selected split of selected tab of front window to {charOffset, 0}\n"
+    @"  end tell\n"
+    @"end jump\n";
+
+- (BOOL)openInCoda2:(OpenInEditorRequest *)request {
+    NSURL *bundleURL = [[NSWorkspace sharedWorkspace] URLForApplicationWithBundleIdentifier:@"com.panic.Coda2"];
+    if (!bundleURL)
+        bailout_return(NO, @"Coda 2 not found");
+
+    if (![[NSWorkspace sharedWorkspace] openURLs:@[request.fileURL] withAppBundleIdentifier:@"com.panic.Coda2" options:0 additionalEventParamDescriptor:nil launchIdentifiers:NULL])
+        bailout_return(NO, @"Failed to open %@ in Coda 2 at %@", request, bundleURL.path);
+
+    if (request.line != OpenInEditorRequestValueUnknown) {
+        NSError *error;
+        int offset = [request computeLinearOffsetWithError:&error];
+        if (offset == OpenInEditorRequestValueUnknown)
+            bailout_return(YES, @"Failed to jump to line of %@ in Coda 2: cannot read file, error is: %@", request, error.localizedDescription);
+
+        NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:CodaJumpScript];
+
+        NSDictionary *errors = [NSDictionary dictionary];
+        if (![appleScript executeHandlerNamed:@"jump" withArguments:@[[NSAppleEventDescriptor descriptorWithInt32:offset]] error:&errors])
+            bailout_return(YES, @"Failed to open %@ in Sublime Text 3 at %@, errors: %@", request, bundleURL.path, errors);
+    }
+
     return YES;
 }
 

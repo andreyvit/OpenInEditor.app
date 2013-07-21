@@ -18,4 +18,6 @@ enum {
 
 - (NSString *)componentsJoinedByString:(NSString *)separator;
 
+- (int)computeLinearOffsetWithError:(NSError **)outError;
+
 @end
