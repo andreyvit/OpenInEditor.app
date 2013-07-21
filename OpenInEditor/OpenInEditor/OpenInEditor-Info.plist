@@ -32,5 +32,38 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.tarantsov.openineditor.sublimetext</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>subl</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.tarantsov.openineditor.sublimetext.2</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>subl2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.tarantsov.openineditor.sublimetext.3</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>subl3</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

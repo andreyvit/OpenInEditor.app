@@ -13,6 +13,10 @@
 		4344CE57179C450A00CB8658 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4344CE55179C450A00CB8658 /* Credits.rtf */; };
 		4344CE5A179C450A00CB8658 /* OpenInEditorAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4344CE59179C450A00CB8658 /* OpenInEditorAppDelegate.m */; };
 		4344CE5D179C450A00CB8658 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4344CE5B179C450A00CB8658 /* MainMenu.xib */; };
+		4344CE65179C56FC00CB8658 /* NSString+ProperURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 4344CE64179C56FC00CB8658 /* NSString+ProperURLEncoding.m */; };
+		4344CE68179C621C00CB8658 /* TaskOutputReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4344CE67179C621C00CB8658 /* TaskOutputReader.m */; };
+		4344CE6B179C622E00CB8658 /* PlainUnixTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 4344CE6A179C622E00CB8658 /* PlainUnixTask.m */; };
+		4344CE71179C62A600CB8658 /* OpenInEditorRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4344CE70179C62A600CB8658 /* OpenInEditorRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,14 @@
 		4344CE58179C450A00CB8658 /* OpenInEditorAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenInEditorAppDelegate.h; sourceTree = "<group>"; };
 		4344CE59179C450A00CB8658 /* OpenInEditorAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenInEditorAppDelegate.m; sourceTree = "<group>"; };
 		4344CE5C179C450A00CB8658 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4344CE63179C56FC00CB8658 /* NSString+ProperURLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ProperURLEncoding.h"; sourceTree = "<group>"; };
+		4344CE64179C56FC00CB8658 /* NSString+ProperURLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ProperURLEncoding.m"; sourceTree = "<group>"; };
+		4344CE66179C621C00CB8658 /* TaskOutputReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskOutputReader.h; sourceTree = "<group>"; };
+		4344CE67179C621C00CB8658 /* TaskOutputReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskOutputReader.m; sourceTree = "<group>"; };
+		4344CE69179C622E00CB8658 /* PlainUnixTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainUnixTask.h; sourceTree = "<group>"; };
+		4344CE6A179C622E00CB8658 /* PlainUnixTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainUnixTask.m; sourceTree = "<group>"; };
+		4344CE6F179C62A600CB8658 /* OpenInEditorRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenInEditorRequest.h; sourceTree = "<group>"; };
+		4344CE70179C62A600CB8658 /* OpenInEditorRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenInEditorRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,14 @@
 			children = (
 				4344CE58179C450A00CB8658 /* OpenInEditorAppDelegate.h */,
 				4344CE59179C450A00CB8658 /* OpenInEditorAppDelegate.m */,
+				4344CE6F179C62A600CB8658 /* OpenInEditorRequest.h */,
+				4344CE70179C62A600CB8658 /* OpenInEditorRequest.m */,
+				4344CE63179C56FC00CB8658 /* NSString+ProperURLEncoding.h */,
+				4344CE64179C56FC00CB8658 /* NSString+ProperURLEncoding.m */,
+				4344CE66179C621C00CB8658 /* TaskOutputReader.h */,
+				4344CE67179C621C00CB8658 /* TaskOutputReader.m */,
+				4344CE69179C622E00CB8658 /* PlainUnixTask.h */,
+				4344CE6A179C622E00CB8658 /* PlainUnixTask.m */,
 				4344CE5B179C450A00CB8658 /* MainMenu.xib */,
 				4344CE4D179C450A00CB8658 /* Supporting Files */,
 			);
@@ -169,6 +189,10 @@
 			files = (
 				4344CE53179C450A00CB8658 /* main.m in Sources */,
 				4344CE5A179C450A00CB8658 /* OpenInEditorAppDelegate.m in Sources */,
+				4344CE65179C56FC00CB8658 /* NSString+ProperURLEncoding.m in Sources */,
+				4344CE68179C621C00CB8658 /* TaskOutputReader.m in Sources */,
+				4344CE6B179C622E00CB8658 /* PlainUnixTask.m in Sources */,
+				4344CE71179C62A600CB8658 /* OpenInEditorRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
